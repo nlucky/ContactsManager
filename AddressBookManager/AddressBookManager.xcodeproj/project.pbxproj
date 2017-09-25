@@ -16,7 +16,7 @@
 		CCB1EC0E1F76594000E2C616 /* AddressBookManagerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB1EC0D1F76594000E2C616 /* AddressBookManagerUITests.swift */; };
 		CCB1EC1D1F76596400E2C616 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCB1EC1C1F76596400E2C616 /* AddressBook.framework */; };
 		CCB1EC1F1F76597600E2C616 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCB1EC1E1F76597600E2C616 /* AddressBookUI.framework */; };
-		CCB1EC211F76599200E2C616 /* AddressManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB1EC201F76599200E2C616 /* AddressManager.swift */; };
+		CCB1EC211F76599200E2C616 /* ContactManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB1EC201F76599200E2C616 /* ContactManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +52,7 @@
 		CCB1EC0F1F76594000E2C616 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CCB1EC1C1F76596400E2C616 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		CCB1EC1E1F76597600E2C616 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
-		CCB1EC201F76599200E2C616 /* AddressManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressManager.swift; sourceTree = "<group>"; };
+		CCB1EC201F76599200E2C616 /* ContactManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,7 +108,7 @@
 			children = (
 				CCB1EBED1F76594000E2C616 /* AppDelegate.swift */,
 				CCB1EBEF1F76594000E2C616 /* ViewController.swift */,
-				CCB1EC201F76599200E2C616 /* AddressManager.swift */,
+				CCB1EC201F76599200E2C616 /* ContactManager.swift */,
 				CCB1EBF11F76594000E2C616 /* Main.storyboard */,
 				CCB1EBF41F76594000E2C616 /* Assets.xcassets */,
 				CCB1EBF61F76594000E2C616 /* LaunchScreen.storyboard */,
@@ -278,7 +278,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CCB1EC211F76599200E2C616 /* AddressManager.swift in Sources */,
+				CCB1EC211F76599200E2C616 /* ContactManager.swift in Sources */,
 				CCB1EBF01F76594000E2C616 /* ViewController.swift in Sources */,
 				CCB1EBEE1F76594000E2C616 /* AppDelegate.swift in Sources */,
 			);

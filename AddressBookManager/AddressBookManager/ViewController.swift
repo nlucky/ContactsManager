@@ -12,8 +12,10 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        AddressManager.shared.fetchAddressList()
-        // Do any additional setup after loading the view, typically from a nib.
+        ContactManager.shared.fetchAll()
+        ContactManager.shared.fetch(withType: .sameName)
+        ContactManager.shared.fetch(withType: .sameNum)
+        
     }
 
     override func didReceiveMemoryWarning() {
