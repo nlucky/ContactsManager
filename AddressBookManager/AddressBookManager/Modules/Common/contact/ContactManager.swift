@@ -8,6 +8,7 @@
 
 import Foundation
 import Contacts
+import ContactsUI
 
 enum ContactListType {
     case all
@@ -18,7 +19,7 @@ enum ContactListType {
 class ContactManager {
     static let shared: ContactManager = ContactManager()
     fileprivate let contactsStore = CNContactStore()
-    fileprivate let keys = [CNContactGivenNameKey, CNContactDatesKey, CNContactTypeKey, CNContactPhoneNumbersKey, CNContactMiddleNameKey, CNContactFamilyNameKey] as [CNKeyDescriptor]
+    fileprivate let keys = [CNContactGivenNameKey, CNContactDatesKey, CNContactTypeKey, CNContactPhoneNumbersKey, CNContactMiddleNameKey, CNContactFamilyNameKey, CNContactImageDataKey] as [CNKeyDescriptor]
     fileprivate lazy var req = CNContactFetchRequest(keysToFetch: keys)
 
     public func fetchAll() -> [CNContact] {
@@ -67,4 +68,19 @@ class ContactManager {
         }
         return map
     }
+    
+    public func delete(contact: CNContact) {
+        guard let deleteContact = contact.mutableCopy() as? CNMutableContact else { return }
+        let deletRequest = CNSaveRequest()
+        deletRequest.delete(deleteContact)
+        do {
+            try contactsStore.execute(deletRequest)
+        } catch _ {
+        }
+    }
+    
+    public func delete(contacts: [CNContact]) {
+        contacts.forEach { delete(contact: $0) }
+    }
+    
 }

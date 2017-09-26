@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="134" id="KGk-i7-Jjw" customClass="ContactCell" customModule="AddressBookManager" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="134"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="133.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yac-mw-YV8">
+                        <rect key="frame" x="10" y="10" width="80" height="80"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="80" id="2gk-mx-PWT"/>
+                            <constraint firstAttribute="height" constant="80" id="sPo-Eq-zQo"/>
+                        </constraints>
+                    </imageView>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="hni-aS-dkn">
+                        <rect key="frame" x="100" y="10" width="220" height="51"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qsS-31-WMg">
+                                <rect key="frame" x="0.0" y="0.0" width="42" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aBp-Pw-Lys">
+                                <rect key="frame" x="0.0" y="30.5" width="42" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="陈 小俊" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S3i-oo-3DM">
+                        <rect key="frame" x="10" y="102" width="80" height="13.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="S3i-oo-3DM" firstAttribute="width" secondItem="yac-mw-YV8" secondAttribute="width" id="6to-VA-7TA"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="S3i-oo-3DM" secondAttribute="bottom" priority="999" constant="10" id="Enn-hB-8Yy"/>
+                    <constraint firstItem="yac-mw-YV8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="IXh-Gj-84q"/>
+                    <constraint firstItem="yac-mw-YV8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="KGg-jr-kis"/>
+                    <constraint firstAttribute="trailing" secondItem="hni-aS-dkn" secondAttribute="trailing" id="Qzi-fD-3Lu"/>
+                    <constraint firstItem="S3i-oo-3DM" firstAttribute="centerX" secondItem="yac-mw-YV8" secondAttribute="centerX" id="VZa-Xh-rY3"/>
+                    <constraint firstItem="hni-aS-dkn" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="gKd-0W-yX7"/>
+                    <constraint firstItem="hni-aS-dkn" firstAttribute="leading" secondItem="yac-mw-YV8" secondAttribute="trailing" constant="10" id="vIt-dU-lFW"/>
+                    <constraint firstItem="S3i-oo-3DM" firstAttribute="top" secondItem="yac-mw-YV8" secondAttribute="bottom" constant="12" id="wTC-Q4-IeN"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="headerImageView" destination="yac-mw-YV8" id="lLr-WC-mS8"/>
+                <outlet property="nameLabel" destination="S3i-oo-3DM" id="14L-Ap-6aK"/>
+                <outlet property="phoneContainer" destination="hni-aS-dkn" id="BQy-EM-QLK"/>
+            </connections>
+            <point key="canvasLocation" x="34" y="9"/>
+        </tableViewCell>
+    </objects>
+</document>
