@@ -15,12 +15,12 @@ class ContactCell: UITableViewCell {
     @IBOutlet weak var headerImageView: UIImageView!
     @IBOutlet weak var phoneContainer: UIStackView!
     private var maxShowCount: Int {
-        return 3
+        return 2
     }
     override func awakeFromNib() {
         super.awakeFromNib()
         headerImageView.clipsToBounds = true
-        headerImageView.layer.cornerRadius = 40
+        headerImageView.layer.cornerRadius = 25
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

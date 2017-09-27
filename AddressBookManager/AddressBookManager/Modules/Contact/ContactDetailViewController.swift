@@ -7,9 +7,20 @@
 //
 
 import UIKit
+import Contacts
 
 class ContactDetailViewController: BaseViewController {
-
+    fileprivate var contact: CNContact
+    
+    public init(contact: CNContact) {
+        self.contact = contact
+        super.init(nibName:nil, bundle:nil)
+    }
+    
+    public required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

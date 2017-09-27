@@ -16,6 +16,7 @@ class HomeViewController: BaseViewController {
         super.viewDidLoad()
         tableView.estimatedRowHeight = 100
         tableView.register(UINib(nibName: "ContactCell", bundle: nil), forCellReuseIdentifier: "ContactCell")
+        tableView.reloadData()
         
         
     }
@@ -27,6 +28,9 @@ class HomeViewController: BaseViewController {
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let detail = ContactDetailViewController(contact: self.dataSource[indexPath.row])
+        navigationController?.pushViewController(detail, animated: true)
+        
         
     }
 
@@ -53,14 +57,13 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let deleteAction = UITableViewRowAction(style: .destructive, title: "删除") { (action, mindexPath) in
+            ContactManager.shared.delete(contact: self.dataSource[indexPath.row])
             self.dataSource.remove(at: indexPath.row)
             tableView.deleteRows(at: [mindexPath], with: .fade)
         }
         return [deleteAction]
     }
     func tableView(_ tableView: UITableView, didEndEditingRowAt indexPath: IndexPath?) {
-        guard let indexPath = indexPath else {
-            return
-        }
+       
     }
 }
