@@ -15,6 +15,7 @@ enum ContactListType {
     case sameName
     case sameNum
 }
+// "#1296db"
 
 class ContactManager {
     static let shared: ContactManager = ContactManager()

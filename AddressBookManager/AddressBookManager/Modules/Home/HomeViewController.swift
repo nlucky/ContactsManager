@@ -18,6 +18,8 @@ class HomeViewController: BaseViewController {
         tableView.register(UINib(nibName: "ContactCell", bundle: nil), forCellReuseIdentifier: "ContactCell")
         tableView.reloadData()
         
+        let imageview = UIImageView(image: UIImage(named: "home_icon"))
+        navigationItem.titleView = imageview
         
     }
 

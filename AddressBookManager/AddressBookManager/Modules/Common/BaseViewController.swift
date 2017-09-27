@@ -13,6 +13,17 @@ public func SYSTEM_VERSION_LESS_THAN(_ version: String) -> Bool {
 }
 
 class BaseViewController: UIViewController {
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
+    }
+    override var shouldAutorotate: Bool {
+        return false
+    }
+    override var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation {
+        return .portrait
+    }
+    
     public override init(nibName: String?, bundle: Bundle?) {
         
         if (nibName == nil && SYSTEM_VERSION_LESS_THAN("9.0")) {
