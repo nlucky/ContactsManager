@@ -1,13 +1,21 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ContactDetailViewController" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ContactDetailViewController" customModule="AddressBookManager" customModuleProvider="target">
             <connections>
+                <outlet property="avatarImageView" destination="DYd-NF-vaM" id="dGF-gD-6M0"/>
+                <outlet property="nameLabel" destination="glL-zb-Alb" id="VcF-P6-fZE"/>
+                <outlet property="numbersTableView" destination="NPx-Sd-JJZ" id="m0O-ov-3v0"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -15,8 +23,70 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DYd-NF-vaM">
+                    <rect key="frame" x="147.5" y="30" width="80" height="80"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="qQJ-oN-k3j"/>
+                        <constraint firstAttribute="width" secondItem="DYd-NF-vaM" secondAttribute="height" id="zaW-Kq-aMh"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="glL-zb-Alb">
+                    <rect key="frame" x="166" y="130" width="42" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="f9y-QD-ccy">
+                    <rect key="frame" x="125.5" y="180" width="123" height="30"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Kc-Pj-bcF">
+                            <rect key="frame" x="0.0" y="0.0" width="31" height="30"/>
+                            <state key="normal" title="电话"/>
+                            <connections>
+                                <action selector="callPhone:" destination="-1" eventType="touchUpInside" id="Zfi-uM-QHm"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aig-WM-s8i">
+                            <rect key="frame" x="46" y="0.0" width="31" height="30"/>
+                            <state key="normal" title="短信"/>
+                            <connections>
+                                <action selector="sendMessage:" destination="-1" eventType="touchUpInside" id="9a3-aZ-f8k"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D11-UI-fTi">
+                            <rect key="frame" x="92" y="0.0" width="31" height="30"/>
+                            <state key="normal" title="视频"/>
+                            <connections>
+                                <action selector="callFaceTime:" destination="-1" eventType="touchUpInside" id="ut2-D7-WVv"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NPx-Sd-JJZ">
+                    <rect key="frame" x="-0.5" y="230" width="375" height="437"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="wqc-Km-dQo"/>
+                        <outlet property="delegate" destination="-1" id="0zK-5Z-nqp"/>
+                    </connections>
+                </tableView>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="glL-zb-Alb" firstAttribute="centerX" secondItem="DYd-NF-vaM" secondAttribute="centerX" id="2Ui-oy-nxv"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="NPx-Sd-JJZ" secondAttribute="bottom" id="80A-gO-QIt"/>
+                <constraint firstItem="f9y-QD-ccy" firstAttribute="top" secondItem="glL-zb-Alb" secondAttribute="bottom" constant="29.5" id="M0y-hk-UVs"/>
+                <constraint firstItem="DYd-NF-vaM" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Njr-s9-tmu"/>
+                <constraint firstItem="glL-zb-Alb" firstAttribute="top" secondItem="DYd-NF-vaM" secondAttribute="bottom" constant="20" id="PCI-3t-l6M"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="top" secondItem="DYd-NF-vaM" secondAttribute="top" constant="-10" id="Ph5-TZ-mVG"/>
+                <constraint firstItem="f9y-QD-ccy" firstAttribute="centerX" secondItem="glL-zb-Alb" secondAttribute="centerX" id="ThV-64-Erm"/>
+                <constraint firstItem="NPx-Sd-JJZ" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" id="kZ4-rU-Y32"/>
+                <constraint firstItem="NPx-Sd-JJZ" firstAttribute="centerX" secondItem="Aig-WM-s8i" secondAttribute="centerX" id="uoa-SG-F4H"/>
+                <constraint firstItem="NPx-Sd-JJZ" firstAttribute="top" secondItem="f9y-QD-ccy" secondAttribute="bottom" constant="20" id="wJf-4M-cZF"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="33.5" y="53.5"/>
         </view>
     </objects>
 </document>
