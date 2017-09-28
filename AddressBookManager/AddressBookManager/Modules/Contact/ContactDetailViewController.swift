@@ -142,6 +142,13 @@ class PhoenCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         commonInit()
     }
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        commonInit()
+    }
     
     func commonInit() {
         let label = UILabel()
